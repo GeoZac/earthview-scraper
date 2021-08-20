@@ -17,7 +17,7 @@ def recursive_scrape(url, count=0):
     page = requests.get(url)
     photo_json = page.json()
 
-    print photo_json
+    print(photo_json)
     yield photo_json
 
     next_url = 'https://earthview.withgoogle.com' + photo_json['nextApi']
