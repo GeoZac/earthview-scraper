@@ -20,7 +20,7 @@ def recursive_scrape(url, count=0):
     print(photo_json)
     yield photo_json
 
-    next_url = 'https://earthview.withgoogle.com' + photo_json['nextApi']
+    next_url = 'https://earthview.withgoogle.com/_api/' + photo_json['nextSlug'] + ".json"
 
     # Yielding from recursive functions is a bit funky
     for photo_json in recursive_scrape(next_url, count + 1):
